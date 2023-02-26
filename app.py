@@ -42,8 +42,7 @@ with st.sidebar:
                                           options=df['Customer Type'].unique(),
                                           default=df['Customer Type'].unique())
     
-    age_filter = st.slider(label='Select Age',
-                           value=(df['Age'].min(), df['Age'].max()))
+    age_filter = st.slider(label='Select Age', value=(df['Age'].min(), df['Age'].max()))
     
     # age_filter = st.multiselect(label='Select Age:',
     #                                       options=df['Age'].unique(),
