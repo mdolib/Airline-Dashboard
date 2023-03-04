@@ -19,13 +19,13 @@ st.markdown("""
             """,
             unsafe_allow_html=True)
 
-@st.cache_resource
-def get_data():
-    #df = pd.read_csv('C:/Users/Mohammed Dolib/Desktop/Airline Passenger Satisfaction/Airline Passenger Satisfaction.csv')
-    df = pd.read_csv('https://github.com/mdolib/Airline-Dashboard/raw/main/Airline%20Passenger%20Satisfaction.csv')
+@st.cache_data
+def get_data(url):
+    df = pd.read_csv(url)
     return df
 
-df = get_data()
+url = 'https://github.com/mdolib/Airline-Dashboard/raw/main/Airline%20Passenger%20Satisfaction.csv'
+df = get_data(url)
 
 header_left, header_mid, header_right = st.columns([1,3,1], gap='large')
 with header_mid:
